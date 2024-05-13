@@ -1,7 +1,7 @@
 
 :root {
 
-    --red: hsla(0, 100%, 50%, 0.908);
+    --red: hsla(0, 100%, 50%, 0.617);
     --quick-silver: hsla(0, 0%, 65%, 1);
     --davys-grey: hsla(30, 3%, 34%, 1);
     --smoky-black-1: hsla(40, 12%, 5%, 1);
@@ -14,7 +14,7 @@
     --white: hsla(0, 0%, 100%, 1);
     --white-alpha-20: hsla(0, 0%, 100%, 0.2);
     --white-alpha-10: hsla(0, 0%, 100%, 0.1);
-    --black: hsla(0, 0%, 0%, 1);
+    --black: rgb(253, 253, 253);
     --black-alpha-80: hsla(0, 0%, 0%, 0.8);
     --black-alpha-15: hsla(0, 0%, 0%, 0.15);
     --eerie-red-1:hsl(0, 98%, 50%);
@@ -61,7 +61,7 @@
     --section-space: 70px;
 
   
-    --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+    --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 20px);
   
   
     --radius-24: 24px;
@@ -564,16 +564,7 @@
     border-block-end: 1px solid transparent;
     transition: var(--transition-1);
   }
-  .container {
-    position: relative;
-}
 
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
   
   .header.active {
     padding-block: 20px;
@@ -666,7 +657,7 @@
   
   .navbar-link {
     position: relative;
-    font-size: var(--fontSize-label-2);
+    font-size: var(--fontSize-label-1);
     text-transform: uppercase;
     padding-block: 10px;
     max-width: unset;
@@ -1440,7 +1431,7 @@
      * HEADER
      */
   
-    .header { top: 51px; }
+    .header { top: 8px; }
   
     .header.active { top: 0; }
   
