@@ -795,7 +795,7 @@
   
   .hero-btn {
     position: absolute;
-    bottom: 15px;
+    bottom:40px;
     right: 15px;
     z-index: 2;
     background-color: var(--red);
@@ -1736,7 +1736,7 @@
     .hero { height: 880px; }
   
     .hero-btn {
-      bottom: 50px;
+      bottom: 80px;
       right: 50px;
       transform: scale(1);
     }
