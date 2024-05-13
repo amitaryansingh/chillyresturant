@@ -1,14 +1,6 @@
 'use strict';
 
 
-const preloader = document.querySelector("[data-preaload]");
-
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
-
-
 const addEventOnElements = function (elements, eventType, callback) {
   for (let i = 0, len = elements.length; i < len; i++) {
     elements[i].addEventListener(eventType, callback);
@@ -16,7 +8,18 @@ const addEventOnElements = function (elements, eventType, callback) {
 }
 
 
+const preloader = document.querySelector("[data-preaload]");
 
+
+const removePreload = function () {
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
+}
+
+
+setTimeout(removePreload, 1000);
+
+// Navbar toggling functionality
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
@@ -29,12 +32,7 @@ const toggleNavbar = function () {
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
-
-
-/**
- * HEADER & BACK TOP BTN
- */
-
+// Header and back to top button functionality
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
@@ -62,12 +60,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
-
-/**
- * HERO SLIDER
- */
-
+// Hero slider functionality
 const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
 const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
@@ -106,10 +99,7 @@ const slidePrev = function () {
 
 heroSliderPrevBtn.addEventListener("click", slidePrev);
 
-/**
- * auto slide
- */
-
+// Automatic slide functionality
 let autoSlideInterval;
 
 const autoSlide = function () {
@@ -126,22 +116,16 @@ addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide
 
 window.addEventListener("load", autoSlide);
 
-
-
-/**
- * PARALLAX EFFECT
- */
-
+// Parallax effect functionality
 const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
 let x, y;
 
 window.addEventListener("mousemove", function (event) {
-
   x = (event.clientX / window.innerWidth * 10) - 5;
   y = (event.clientY / window.innerHeight * 10) - 5;
 
-  // reverse the number eg. 20 -> -20, -5 -> 5
+  // Reverse the number eg. 20 -> -20, -5 -> 5
   x = x - (x * 2);
   y = y - (y * 2);
 
@@ -150,5 +134,4 @@ window.addEventListener("mousemove", function (event) {
     y = y * Number(parallaxItems[i].dataset.parallaxSpeed);
     parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
   }
-
 });
